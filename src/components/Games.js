@@ -1,4 +1,4 @@
-import '../css/Games.css';
+import "../css/Games.css";
 
 function Games() {
   return (

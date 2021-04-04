@@ -1,4 +1,4 @@
-import '../css/Answer.css';
+import "../css/Answer.css";
 
 function Answer() {
   return (
