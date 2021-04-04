@@ -8,19 +8,28 @@ function App() {
   const [currentGame, setCurrentGame] = useState("");
   const [isGameRunning, setIsGameRunning] = useState(false);
 
+  const startGame = () => {
+    
+  }
+
   return (
     <div className="app">
       <header className="title">
         <h1>Flashcard Fury</h1>
         <h3>Put your trivial knowledge to the test</h3>
         <p>A trivia game made with the help of jService</p>
+        <button onClick={startGame}>Start New Game!</button>
       </header>
+      <div className="games-box">
       {games.length !== 0 &&
         <Games />
       }
+      </div>
+      <div className="game-box">
       {isGameRunning &&
         <Game />
       }
+      </div>
     </div>
   );
 }
