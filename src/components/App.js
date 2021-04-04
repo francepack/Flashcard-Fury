@@ -6,15 +6,28 @@ import Games from "./Games";
 function App() {
   const [games, setGames] = useState([]);
   const [currentGame, setCurrentGame] = useState("");
-  const [isGameRunning, setIsGameRunning] = useState(false);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const startGame = () => {
+  const startGame = async () => {
+    setIsLoading(true);
     const gameName = createGameName();
+    const clues = await fetchClues();
+    const gameData = {
+      name: gameName,
+      questions: clues
+    };
+    setIsLoading(false);
+    setCurrentGame(gameName);
   }
 
   const createGameName = () => {
     return "Game " + (games.length + 1);
+  }
+
+  const fetchClues = async () => {
+    let response = await fetch("https://jservice.io/api/random?count=30");
+    response = await response.json();
+    return response;
   }
 
   return (
@@ -31,7 +44,10 @@ function App() {
       }
       </div>
       <div className="game-box">
-      {isGameRunning &&
+      {isLoading &&
+        <p>Gathering game data...</p>
+      }
+      {currentGame &&
         <Game />
       }
       </div>
