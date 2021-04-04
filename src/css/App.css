@@ -8,6 +8,12 @@
   }
 }
 
+.loading-message {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
 .title {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,6 +25,29 @@
   color: white;
 }
 
+.title h1 {
+
+}
+
+.title h3 {
+
+}
+
+.title p {
+
+}
+
+.title button {
+
+}
+
+.games-box {
+
+}
+
+.game-box {
+
+}
 /* .App-link {
   color: #61dafb;
 } */

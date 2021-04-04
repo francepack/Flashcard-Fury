@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useReducer } from "react";
 import "../css/App.css";
 import Game from "./Game";
 import Games from "./Games";
@@ -6,11 +6,11 @@ import { formatClues } from "../utils/formatClues";
 
 function App() {
   const [games, setGames] = useState([]);
-  const [currentGame, setCurrentGame] = useState("");
+  const [currentGameId, setCurrentGameId] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const startGame = async () => {
-    setIsLoading(true);
+    setIsLoading(true)
     const gameName = "Game " + (games.length + 1);
     const clues = await fetchClues();
     const gameData = {
@@ -18,12 +18,17 @@ function App() {
       name: gameName,
       questions: formatClues(clues)
     };
-    setIsLoading(false);
-    setCurrentGame(gameName);
+    setGames(games.concat(gameData));
+    setIsLoading(false)
+    setCurrentGameId(gameData.id);
   }
 
   const endGame = () => {
-    setCurrentGame("");
+    setCurrentGameId("");
+  }
+
+  const findCurrentGameData = () => {
+    return games.find(game => (game.id === currentGameId));
   }
 
   const fetchClues = async () => {
@@ -47,11 +52,14 @@ function App() {
       </div>
       <div className="game-box">
       {isLoading &&
-        <p>Gathering game data...</p>
+        <p className="loading-message">Gathering game data...</p>
       }
-      {currentGame &&
+      {currentGameId &&
         <Game
           endGame={endGame}
+          currentGameData={games.find(game => game.id === currentGameId)}
+          gameId={currentGameId}
+          findCurrentGameData={findCurrentGameData}
         />
       }
       </div>
