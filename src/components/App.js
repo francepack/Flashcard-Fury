@@ -7,9 +7,14 @@ function App() {
   const [games, setGames] = useState([]);
   const [currentGame, setCurrentGame] = useState("");
   const [isGameRunning, setIsGameRunning] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   const startGame = () => {
-    
+    const gameName = createGameName();
+  }
+
+  const createGameName = () => {
+    return "Game " + (games.length + 1);
   }
 
   return (
