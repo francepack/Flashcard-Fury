@@ -22,6 +22,10 @@ function App() {
     setCurrentGame(gameName);
   }
 
+  const endGame = () => {
+    setCurrentGame("");
+  }
+
   const fetchClues = async () => {
     let response = await fetch("https://jservice.io/api/random?count=30");
     response = await response.json();
@@ -46,7 +50,9 @@ function App() {
         <p>Gathering game data...</p>
       }
       {currentGame &&
-        <Game />
+        <Game
+          endGame={endGame}
+        />
       }
       </div>
     </div>
