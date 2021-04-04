@@ -10,7 +10,7 @@ function App() {
 
   const startGame = async () => {
     setIsLoading(true);
-    const gameName = createGameName();
+    const gameName = "Game " + (games.length + 1);
     const clues = await fetchClues();
     const gameData = {
       name: gameName,
@@ -18,10 +18,6 @@ function App() {
     };
     setIsLoading(false);
     setCurrentGame(gameName);
-  }
-
-  const createGameName = () => {
-    return "Game " + (games.length + 1);
   }
 
   const fetchClues = async () => {
