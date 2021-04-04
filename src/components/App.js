@@ -1,6 +1,11 @@
+import React, { useState, useEffect } from "react";
 import '../css/App.css';
 
 function App() {
+  const [games, setGames] = useState([]);
+  const [currentGame, setCurrentGame] = useState("");
+  const [isGameRunning, setIsGameRunning] = useState(false);
+
   return (
     <div className="app">
       <header className="title">
