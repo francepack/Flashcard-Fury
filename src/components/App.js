@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import '../css/App.css';
+import "../css/App.css";
+import Game from "./Game";
+import Games from "./Games";
 
 function App() {
   const [games, setGames] = useState([]);
@@ -13,6 +15,12 @@ function App() {
         <h3>Put your trivial knowledge to the test</h3>
         <p>A trivia game made with the help of jService</p>
       </header>
+      {games.length !== 0 &&
+        <Games />
+      }
+      {isGameRunning &&
+        <Game />
+      }
     </div>
   );
 }
