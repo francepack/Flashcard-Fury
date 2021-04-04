@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/App.css";
 import Game from "./Game";
 import Games from "./Games";
+import { formatClues } from "../utils/formatClues";
 
 function App() {
   const [games, setGames] = useState([]);
@@ -13,8 +14,9 @@ function App() {
     const gameName = "Game " + (games.length + 1);
     const clues = await fetchClues();
     const gameData = {
+      id: "G" + (games.length + 1),
       name: gameName,
-      questions: clues
+      questions: formatClues(clues)
     };
     setIsLoading(false);
     setCurrentGame(gameName);
