@@ -55,7 +55,7 @@ function App() {
       <header className="title">
         <h1>Flashcard Fury</h1>
         <h3>Put your trivial knowledge to the test</h3>
-        <p>A trivia game made with the help of jService</p>
+        <p>A trivia game made with the help of <a href="http://jservice.io/">jService</a></p>
         <button onClick={startGame}>Start New Game!</button>
       </header>
       <div className="games-box">
