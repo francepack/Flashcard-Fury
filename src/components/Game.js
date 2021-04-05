@@ -8,7 +8,6 @@ function Game(props) {
   const [showAnswer, setShowAnswer] = useState(false);
 
   const incrementQuestion = () => {
-    console.log(props.questionData);
     setQuestionIncrementor(questionIncrementor + 1);
   }
 

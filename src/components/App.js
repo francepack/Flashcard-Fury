@@ -54,10 +54,11 @@ function App() {
     const currentGameData = findCurrentGameData();
     const questionAnsweredCorrectly = findGameQuestion(currentGameData, questionId);
     questionAnsweredCorrectly.hasAnsweredCorrectly = true;
-    const newGameData = currentGameData.questions.splice(questionIndex, 1, questionAnsweredCorrectly);
+    currentGameData.questions.splice(questionIndex, 1, questionAnsweredCorrectly);
     const gameIndex = currentGameId.split("G")[1] - 1;
-    const newData = games.splice(gameIndex, 1, newGameData);
-    setGames(newData);
+    const newGameData = [...games];
+    newGameData.splice(gameIndex, 1, currentGameData);
+    setGames(newGameData);
   }
 
   return (

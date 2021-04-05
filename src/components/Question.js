@@ -9,7 +9,6 @@ function Question(props) {
   }
 
   const evaluateAnswer = (userInput) => {
-    console.log(props.questionIncrementor)
     const questionIndex = props.questionIncrementor - 1;
     if (userInput) {
       props.markAnsweredCorrectly(props.question.id, questionIndex);
@@ -27,10 +26,16 @@ function Question(props) {
   return (
     <div className="question">
       {!showAnswer &&
-        <h5 onClick={turnOnAnswer}>{props.question.question}</h5>
+        <div className="question-box">
+          <p>Question {props.questionIncrementor}/30</p>
+          <p>Category: {props.question.category}</p>
+          <h5 onClick={turnOnAnswer}>{props.question.question}</h5>
+        </div>
       }
       {showAnswer &&
         <div className="answer-box">
+          <p>Question {props.questionIncrementor}/30</p>
+          <p>Category: {props.question.category}</p>
           <h5>{props.question.answer}</h5>
           <p>Did you know this one?</p>
           <button onClick={() => evaluateAnswer(true)}>Got it right!</button>
