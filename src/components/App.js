@@ -65,7 +65,7 @@ function App() {
       </div>
       <div className="game-box">
       {isLoading &&
-        <p className="loading-message">Gathering game data...</p>
+        <div className="loading-message"><p>Gathering game data...</p></div>
       }
       {currentGameId &&
         <Game
