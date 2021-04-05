@@ -10,7 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const startGame = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     const gameName = "Game " + (games.length + 1);
     const clues = await fetchClues();
     const gameData = {
@@ -19,7 +19,7 @@ function App() {
       questions: formatClues(clues)
     };
     setGames(games.concat(gameData));
-    setIsLoading(false)
+    setIsLoading(false);
     setCurrentGameId(gameData.id);
   }
 
@@ -36,25 +36,19 @@ function App() {
     return currentGameData.questions;
   }
 
-  const findGameQuestion = (gameData, questionId) => {
-    return gameData.questions.find(question => question.id === questionId);
-  }
-
-  const findQuestionIndex = () => {
-
-  }
-
   const fetchClues = async () => {
     let response = await fetch("https://jservice.io/api/random?count=30");
     response = await response.json();
     return response;
   }
 
-  const markAnsweredCorrectly = (questionId, questionIndex) => {
+  const markAnsweredCorrectly = (questionIndex) => {
+    // First, replace the question within the current game
     const currentGameData = findCurrentGameData();
-    const questionAnsweredCorrectly = findGameQuestion(currentGameData, questionId);
+    const questionAnsweredCorrectly = currentGameData.questions[questionIndex];
     questionAnsweredCorrectly.hasAnsweredCorrectly = true;
     currentGameData.questions.splice(questionIndex, 1, questionAnsweredCorrectly);
+    // Then, replace the current game within all games
     const gameIndex = currentGameId.split("G")[1] - 1;
     const newGameData = [...games];
     newGameData.splice(gameIndex, 1, currentGameData);

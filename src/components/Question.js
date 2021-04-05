@@ -11,7 +11,7 @@ function Question(props) {
   const evaluateAnswer = (userInput) => {
     const questionIndex = props.questionIncrementor - 1;
     if (userInput) {
-      props.markAnsweredCorrectly(props.question.id, questionIndex);
+      props.markAnsweredCorrectly(questionIndex);
     }
     if (props.questionIncrementor === 30) {
       props.resetIncrementor();

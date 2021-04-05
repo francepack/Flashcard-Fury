@@ -7,14 +7,13 @@ export const formatClues = (clueData) => {
       category: clue.category.title,
       hasAnsweredCorrectly: false,
       id: clue.id,
-      question: clue.question || "API question format inconsistency"
-      // Sometimes, invalid questions are gathered from this API :(
+      question: clue.question || "API question format inconsistency" // Invalid questions are gathered from this API sometimes :(
     });
   });
   return cleanedClues;
 }
 
-// Some answers are enclosed with <i> tags which we remove to avoid printing
+// Remove html tags from answers to avoid printing... some have <i> tags
 const cleanAnswer = (answer) => {
   return answer.replace( /(<([^>]+)>)/ig, '')
 }

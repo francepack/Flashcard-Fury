@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/Game.css";
 import Question from "./Question";
-import Answer from "./Answer";
 
 function Game(props) {
   const [questionIncrementor, setQuestionIncrementor] = useState(0);
@@ -14,22 +13,6 @@ function Game(props) {
   const resetIncrementor = () => {
     setQuestionIncrementor(0);
   }
-
-  // const turnOnAnswer = () => {
-  //   setShowAnswer(true);
-  // }
-  //
-  // const turnOffAnswer = () => {
-  //   setShowAnswer(false);
-  // }
-
-  // {showAnswer &&
-  //   <Answer
-  //     answer={props.questionData[questionIncrementor - 1].answer}
-  //     turnOffAnswer={turnOffAnswer}
-  //     endGame={props.endGame}
-  //   />
-  // }
 
   return (
     <div className="game">
