@@ -12,6 +12,10 @@ function Game(props) {
     setQuestionIncrementor(questionIncrementor + 1);
   }
 
+  const resetIncrementor = () => {
+    setQuestionIncrementor(0);
+  }
+
   // const turnOnAnswer = () => {
   //   setShowAnswer(true);
   // }
@@ -31,15 +35,19 @@ function Game(props) {
   return (
     <div className="game">
       <div className="content-box">
-      {!questionIncrementor &&
-        <p onClick={() => incrementQuestion()}>Your Quiz is about to begin. Click anywhere to proceed</p>
-      }
-      {questionIncrementor &&
-        <Question
-          question={props.questionData[questionIncrementor - 1]}
-          incrementQuestion={incrementQuestion}
-        />
-      }
+        {!questionIncrementor &&
+          <p onClick={() => incrementQuestion()}>Your Quiz is about to begin. Click anywhere to proceed</p>
+        }
+        {questionIncrementor >= 1 &&
+          <Question
+            question={props.questionData[questionIncrementor - 1]}
+            incrementQuestion={incrementQuestion}
+            questionIncrementor={questionIncrementor}
+            endGame={props.endGame}
+            markAnsweredCorrectly={props.markAnsweredCorrectly}
+            resetIncrementor={resetIncrementor}
+          />
+        }
       </div>
     </div>
   );

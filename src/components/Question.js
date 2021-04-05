@@ -2,11 +2,26 @@ import React, { useState } from "react";
 import "../css/Question.css";
 
 function Question(props) {
-  const [questionIncrementor, setQuestionIncrementor] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
 
   const turnOnAnswer = () => {
     setShowAnswer(true);
+  }
+
+  const evaluateAnswer = (userInput) => {
+    console.log(props.questionIncrementor)
+    const questionIndex = props.questionIncrementor - 1;
+    if (userInput) {
+      props.markAnsweredCorrectly(props.question.id, questionIndex);
+    }
+    if (props.questionIncrementor === 30) {
+      props.resetIncrementor();
+      props.endGame();
+    } else {
+      props.incrementQuestion();
+      setShowAnswer(false);
+    }
+
   }
 
   return (
@@ -18,8 +33,8 @@ function Question(props) {
         <div className="answer-box">
           <h5>{props.question.answer}</h5>
           <p>Did you know this one?</p>
-          <button>Got it right!</button>
-          <button>Nope...</button>
+          <button onClick={() => evaluateAnswer(true)}>Got it right!</button>
+          <button onClick={() => evaluateAnswer(false)}>Nope...</button>
         </div>
       }
     </div>

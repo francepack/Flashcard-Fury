@@ -27,15 +27,37 @@ function App() {
     setCurrentGameId("");
   }
 
+  const findCurrentGameData = () => {
+    return games.find(game => (game.id === currentGameId));
+  }
+
   const findCurrentGameQuestions = () => {
-    const currentGame = games.find(game => (game.id === currentGameId));
-    return currentGame.questions;
+    const currentGameData = findCurrentGameData();
+    return currentGameData.questions;
+  }
+
+  const findGameQuestion = (gameData, questionId) => {
+    return gameData.questions.find(question => question.id === questionId);
+  }
+
+  const findQuestionIndex = () => {
+
   }
 
   const fetchClues = async () => {
     let response = await fetch("https://jservice.io/api/random?count=30");
     response = await response.json();
     return response;
+  }
+
+  const markAnsweredCorrectly = (questionId, questionIndex) => {
+    const currentGameData = findCurrentGameData();
+    const questionAnsweredCorrectly = findGameQuestion(currentGameData, questionId);
+    questionAnsweredCorrectly.hasAnsweredCorrectly = true;
+    const newGameData = currentGameData.questions.splice(questionIndex, 1, questionAnsweredCorrectly);
+    const gameIndex = currentGameId.split("G")[1] - 1;
+    const newData = games.splice(gameIndex, 1, newGameData);
+    setGames(newData);
   }
 
   return (
@@ -59,6 +81,7 @@ function App() {
         <Game
           endGame={endGame}
           questionData={findCurrentGameQuestions()}
+          markAnsweredCorrectly={markAnsweredCorrectly}
         />
       }
       </div>
