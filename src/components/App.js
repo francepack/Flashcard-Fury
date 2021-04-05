@@ -63,18 +63,18 @@ function App() {
         <Games />
       }
       </div>
-      <div className="game-box">
       {isLoading &&
         <div className="loading-message"><p>Gathering game data...</p></div>
       }
       {currentGameId &&
-        <Game
-          endGame={endGame}
-          questionData={findCurrentGameQuestions()}
-          markAnsweredCorrectly={markAnsweredCorrectly}
-        />
-      }
-      </div>
+        <div className="game-box">
+          <Game
+            endGame={endGame}
+            questionData={findCurrentGameQuestions()}
+            markAnsweredCorrectly={markAnsweredCorrectly}
+          />
+        </div>
+      }  
     </div>
   );
 }
