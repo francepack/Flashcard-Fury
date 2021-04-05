@@ -26,16 +26,17 @@ function Question(props) {
   return (
     <div className="question">
       {!showAnswer &&
-        <div className="question-box">
-          <p>Question {props.questionIncrementor}/30</p>
-          <p>Category: {props.question.category}</p>
-          <h5 onClick={turnOnAnswer}>{props.question.question}</h5>
+        <div className="question-box" onClick={turnOnAnswer}>
+          <p className="question-count">Question {props.questionIncrementor} of 30</p>
+          <p className="category-display">Category: {props.question.category}</p>
+          <h5>{props.question.question}</h5>
+          <p className="click-anywhere">(Click anywhere to proceed)</p>
         </div>
       }
       {showAnswer &&
         <div className="answer-box">
-          <p>Question {props.questionIncrementor}/30</p>
-          <p>Category: {props.question.category}</p>
+          <p className="question-count">Question {props.questionIncrementor} of 30</p>
+          <p className="category-display">Category: {props.question.category}</p>
           <h5>{props.question.answer}</h5>
           <p>Did you know this one?</p>
           <button onClick={() => evaluateAnswer(true)}>Got it right!</button>

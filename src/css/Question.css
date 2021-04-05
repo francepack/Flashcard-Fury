@@ -1,0 +1,30 @@
+.question {
+  height: 100%;
+  width: 100%;
+}
+
+.question-box {
+  height: 100%;
+  width: 100%;
+}
+
+.question-box:hover {
+  cursor: pointer;
+}
+
+.answer-box {
+  height: 100%;
+  width: 100%;
+}
+
+.question-count {
+  margin-top: 56px;
+}
+
+.category-display {
+  margin-bottom: 50px;
+}
+
+.question h5 {
+  
+}

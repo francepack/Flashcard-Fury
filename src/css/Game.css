@@ -11,7 +11,7 @@
 
 .start-text-area {
   height: 100%;
-  margin-top: 60px;
+  margin-top: 74px;
   width: 100%;
 }
 
@@ -26,8 +26,10 @@
 
 .quiz-begin {
   font-size: calc(16px + 2vmin);
+  margin-top: 66px;
 }
 
 .click-anywhere {
   font-size: calc(10px + 2vmin);
+  margin-top: 38px;
 }
