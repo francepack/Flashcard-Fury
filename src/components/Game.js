@@ -16,21 +16,23 @@ function Game(props) {
 
   return (
     <div className="game">
-      <div className="content-box">
-        {!questionIncrementor &&
-          <p onClick={() => incrementQuestion()}>Your Quiz is about to begin. Click anywhere to proceed</p>
-        }
-        {questionIncrementor >= 1 &&
-          <Question
-            question={props.questionData[questionIncrementor - 1]}
-            incrementQuestion={incrementQuestion}
-            questionIncrementor={questionIncrementor}
-            endGame={props.endGame}
-            markAnsweredCorrectly={props.markAnsweredCorrectly}
-            resetIncrementor={resetIncrementor}
-          />
-        }
-      </div>
+      {!questionIncrementor &&
+        <div className="start-text-area" onClick={() => incrementQuestion()}>
+          <p className="ready">Are you ready?</p>
+          <p className="quiz-begin">Your Quiz is about to begin!</p>
+          <p className="click-anywhere">(Click anywhere to proceed)</p>
+        </div>
+      }
+      {questionIncrementor >= 1 &&
+        <Question
+          question={props.questionData[questionIncrementor - 1]}
+          incrementQuestion={incrementQuestion}
+          questionIncrementor={questionIncrementor}
+          endGame={props.endGame}
+          markAnsweredCorrectly={props.markAnsweredCorrectly}
+          resetIncrementor={resetIncrementor}
+        />
+      }
     </div>
   );
 }

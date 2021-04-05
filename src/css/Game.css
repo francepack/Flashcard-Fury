@@ -1,0 +1,33 @@
+.game {
+  background: url(https://cdn.hipwallpaper.com/i/58/37/SQq0dP.jpg) no-repeat fixed center;
+  background-size: 70% 400px;
+  width: 70%;
+  height: 400px;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-text-area {
+  height: 100%;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.start-text-area:hover {
+  cursor: pointer;
+}
+
+.ready {
+  font-size: calc(24px + 2vmin);
+  font-style: italic;
+}
+
+.quiz-begin {
+  font-size: calc(16px + 2vmin);
+}
+
+.click-anywhere {
+  font-size: calc(10px + 2vmin);
+}

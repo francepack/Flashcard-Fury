@@ -89,6 +89,10 @@ a:hover {
 
 .game-box {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   width: 100%;
   top: 0;
