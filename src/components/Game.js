@@ -12,13 +12,21 @@ function Game(props) {
     setQuestionIncrementor(questionIncrementor + 1);
   }
 
-  const turnOnAnswer = () => {
-    setShowAnswer(true);
-  }
+  // const turnOnAnswer = () => {
+  //   setShowAnswer(true);
+  // }
+  //
+  // const turnOffAnswer = () => {
+  //   setShowAnswer(false);
+  // }
 
-  const turnOffAnswer = () => {
-    setShowAnswer(false);
-  }
+  // {showAnswer &&
+  //   <Answer
+  //     answer={props.questionData[questionIncrementor - 1].answer}
+  //     turnOffAnswer={turnOffAnswer}
+  //     endGame={props.endGame}
+  //   />
+  // }
 
   return (
     <div className="game">
@@ -28,15 +36,8 @@ function Game(props) {
       }
       {questionIncrementor &&
         <Question
-          question={props.questionData[questionIncrementor - 1].question}
-          turnOnAnswer={turnOnAnswer}
-        />
-      }
-      {showAnswer &&
-        <Answer
-          answer={props.questionData[questionIncrementor - 1].answer}
-          turnOffAnswer={turnOffAnswer}
-          endGame={props.endGame}
+          question={props.questionData[questionIncrementor - 1]}
+          incrementQuestion={incrementQuestion}
         />
       }
       </div>
