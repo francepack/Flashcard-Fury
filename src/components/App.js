@@ -3,6 +3,7 @@ import "../css/App.css";
 import Game from "./Game";
 import Games from "./Games";
 import { formatClues } from "../utils/formatClues";
+import { fetchGameData } from "../utils/api";
 
 function App() {
   const [games, setGames] = useState([]);
@@ -12,7 +13,7 @@ function App() {
   const startGame = async () => {
     setIsLoading(true);
     const gameName = "Game " + (games.length + 1);
-    const clues = await fetchClues();
+    const clues = await fetchGameData();
     const gameData = {
       id: "G" + (games.length + 1),
       name: gameName,
@@ -34,12 +35,6 @@ function App() {
   const findCurrentGameQuestions = () => {
     const currentGameData = findCurrentGameData();
     return currentGameData.questions;
-  }
-
-  const fetchClues = async () => {
-    let response = await fetch("https://jservice.io/api/random?count=30");
-    response = await response.json();
-    return response;
   }
 
   const markAnsweredCorrectly = (questionIndex) => {
