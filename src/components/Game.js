@@ -4,24 +4,40 @@ import Question from "./Question";
 import Answer from "./Answer";
 
 function Game(props) {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [questionIncrementor, setQuestionIncrementor] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
 
   const incrementQuestion = () => {
-    setCurrentQuestion(currentQuestion + 1);
+    console.log(props.questionData);
+    setQuestionIncrementor(questionIncrementor + 1);
+  }
+
+  const turnOnAnswer = () => {
+    setShowAnswer(true);
+  }
+
+  const turnOffAnswer = () => {
+    setShowAnswer(false);
   }
 
   return (
     <div className="game">
       <div className="content-box">
-      {!currentQuestion &&
+      {!questionIncrementor &&
         <p onClick={() => incrementQuestion()}>Your Quiz is about to begin. Click anywhere to proceed</p>
       }
-      {currentQuestion &&
-        <Question />
+      {questionIncrementor &&
+        <Question
+          question={props.questionData[questionIncrementor - 1].question}
+          turnOnAnswer={turnOnAnswer}
+        />
       }
       {showAnswer &&
-        <Answer />
+        <Answer
+          answer={props.questionData[questionIncrementor - 1].answer}
+          turnOffAnswer={turnOffAnswer}
+          endGame={props.endGame}
+        />
       }
       </div>
     </div>

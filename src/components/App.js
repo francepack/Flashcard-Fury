@@ -27,8 +27,9 @@ function App() {
     setCurrentGameId("");
   }
 
-  const findCurrentGameData = () => {
-    return games.find(game => (game.id === currentGameId));
+  const findCurrentGameQuestions = () => {
+    const currentGame = games.find(game => (game.id === currentGameId));
+    return currentGame.questions;
   }
 
   const fetchClues = async () => {
@@ -57,9 +58,7 @@ function App() {
       {currentGameId &&
         <Game
           endGame={endGame}
-          currentGameData={games.find(game => game.id === currentGameId)}
-          gameId={currentGameId}
-          findCurrentGameData={findCurrentGameData}
+          questionData={findCurrentGameQuestions()}
         />
       }
       </div>
