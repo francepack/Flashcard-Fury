@@ -16,6 +16,7 @@ function App() {
     const clues = await fetchGameData();
     const gameData = {
       id: "G" + (games.length + 1),
+      key: {gameName},
       name: gameName,
       questions: formatClues(clues)
     };
@@ -58,13 +59,13 @@ function App() {
         <p>A trivia game made with the help of <a href="http://jservice.io/">jService</a></p>
         <button className="start-btn btn" onClick={startGame}>Start New Game!</button>
       </header>
-      <div className="games-box">
       {games.length !== 0 &&
-        <Games
-          games={games}
-        />
+        <div className="games-box">
+          <Games
+            games={games}
+          />
+        </div>
       }
-      </div>
       {isLoading &&
         <div className="loading-message"><p>Gathering game data...</p></div>
       }

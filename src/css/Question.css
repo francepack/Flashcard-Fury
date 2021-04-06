@@ -24,7 +24,7 @@
   text-transform: uppercase;
 }
 
-.question h5 {
+.full h5 {
   font-size: calc(10px + 2vmin);
   left: 15%;
   line-height: 30px;
