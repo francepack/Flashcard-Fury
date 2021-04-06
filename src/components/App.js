@@ -67,14 +67,14 @@ function App() {
         <div className="loading-message"><p>Gathering game data...</p></div>
       }
       {currentGameId &&
-        <div className="game-box">
+        <div className="game-box" onClick={() => console.log('hi')}>
           <Game
             endGame={endGame}
             questionData={findCurrentGameQuestions()}
             markAnsweredCorrectly={markAnsweredCorrectly}
           />
         </div>
-      }  
+      }
     </div>
   );
 }

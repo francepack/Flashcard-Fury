@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 a {
   color: inherit;
 }
@@ -17,19 +11,19 @@ a:hover {
 }
 
 .loading-message {
-  font-size: calc(10px + 2vmin);
-  color: white;
-  height: 100%;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-color: rgba(0,0,0,0.3);
   bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  padding: 0;
+  color: white;
+  font-size: calc(10px + 2vmin);
+  height: 100%;
+  left: 0;
   margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .loading-message p {
@@ -37,13 +31,13 @@ a:hover {
 }
 
 .title {
+  align-items: center;
   background-color: #282c34;
-  min-height: 100vh;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: white;
+  min-height: 100vh;
 }
 
 .title h1 {
@@ -62,26 +56,26 @@ a:hover {
 }
 
 .start-btn {
-  display: inline-block;
-  padding: 0.5em 3em;
   border: 0.16em solid #FFFFFF;
   border-radius: 10px;
-  margin: 0 0.3em 0.3em 0;
+  color: #353c44;
+  display: inline-block;
   font-family: 'Roboto',sans-serif;
   font-weight: 400;
-  color: #353c44;
+  margin: 0 0.3em 0.3em 0;
+  padding: 0.5em 3em;
   text-align: center;
   transition: all 0.15s;
 }
 
 .start-btn:hover{
-  color: #000000;
   border-color: #DDDDDD;
+  color: #000000;
 }
 
 .start-btn:active{
-  color: #BBBBBB;
   border-color: #BBBBBB;
+  color: #BBBBBB;
 }
 
 .games-box {
@@ -89,19 +83,19 @@ a:hover {
 }
 
 .game-box {
-  height: 100%;
+  align-items: center;
+  background-color: rgba(0,0,0,0.3);
+  bottom: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
   justify-content: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }

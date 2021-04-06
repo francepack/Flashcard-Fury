@@ -1,17 +1,18 @@
 .game {
-  background: url(https://cdn.hipwallpaper.com/i/58/37/SQq0dP.jpg) no-repeat fixed center;
-  background-size: 70% 400px;
-  width: 70%;
-  height: 400px;
-  background-color: white;
-  flex-direction: column;
   align-items: center;
+  background: url(https://cdn.hipwallpaper.com/i/58/37/SQq0dP.jpg) no-repeat fixed center;
+  background-color: white;
+  background-size: 70% 400px;
+  flex-direction: column;
+  height: 400px;
   justify-content: center;
+  width: 70%;
+  z-index: 3;
 }
 
 .start-text-area {
-  position: relative;
   height: 100%;
+  position: relative;
   width: 100%;
 }
 
@@ -20,10 +21,10 @@
 }
 
 .ready {
-  margin-top:0;
-  padding-top: 74px;
   font-size: calc(24px + 2vmin);
   font-style: italic;
+  margin-top:0;
+  padding-top: 74px;
 }
 
 .quiz-begin {

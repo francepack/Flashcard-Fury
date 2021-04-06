@@ -1,20 +1,10 @@
-.question {
+.full {
   height: 100%;
   width: 100%;
 }
 
-.question-box {
-  height: 100%;
-  width: 100%;
-}
-
-.question-box:hover {
+.question:hover {
   cursor: pointer;
-}
-
-.answer-box {
-  height: 100%;
-  width: 100%;
 }
 
 .question-count {
@@ -36,25 +26,24 @@
 
 .question h5 {
   font-size: calc(10px + 2vmin);
+  left: 15%;
   line-height: 30px;
   max-width: 70%;
-  position: relative;
-  left: 15%;
   padding-bottom: 42px;
+  position: relative;
 }
 
 .answer-btn {
   background-color: #c8d8e8;
   border-radius: 10px;
-  display: inline-block;
-  padding: 0.5em 3em;
-  margin: 0 0.3em 0.3em 0;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 400;
   color: #353c44;
-  width: 150px;
+  font-weight: 400;
+  display: inline-block;
+  margin: 0 0.3em 0.3em 0;
+  padding: 0.5em 3em;
   text-align: center;
   transition: all 0.15s;
+  width: 150px;
 }
 
 .answer-btn:hover{
@@ -63,8 +52,8 @@
 }
 
 .answer-btn:active{
-  color: #BBBBBB;
   border-color: #BBBBBB;
+  color: #BBBBBB;
 }
 
 .left-btn {

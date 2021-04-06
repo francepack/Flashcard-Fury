@@ -24,9 +24,9 @@ function Question(props) {
   }
 
   return (
-    <div className="question">
+    <div className="full">
       {!showAnswer &&
-        <div className="question-box" onClick={turnOnAnswer}>
+        <div className="question full" onClick={turnOnAnswer}>
           <p className="question-count">Question {props.questionIncrementor} of 30</p>
           <p className="category-display">Category: <span className="category-name">{props.question.category}</span></p>
           <h5>{props.question.question}</h5>
@@ -34,7 +34,7 @@ function Question(props) {
         </div>
       }
       {showAnswer &&
-        <div className="answer-box">
+        <div className="full">
           <p className="question-count">Question {props.questionIncrementor} of 30</p>
           <p className="category-display">Category: <span className="category-name">{props.question.category}</span></p>
           <h5>{props.question.answer}</h5>
