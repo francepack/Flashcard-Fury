@@ -56,7 +56,7 @@ function App() {
         <h1>Flashcard Fury</h1>
         <h3>Put your trivial knowledge to the test</h3>
         <p>A trivia game made with the help of <a href="http://jservice.io/">jService</a></p>
-        <button className="start-btn" onClick={startGame}>Start New Game!</button>
+        <button className="start-btn btn" onClick={startGame}>Start New Game!</button>
       </header>
       <div className="games-box">
       {games.length !== 0 &&
@@ -67,7 +67,7 @@ function App() {
         <div className="loading-message"><p>Gathering game data...</p></div>
       }
       {currentGameId &&
-        <div className="game-box" onClick={() => console.log('hi')}>
+        <div className="game-box">
           <Game
             endGame={endGame}
             questionData={findCurrentGameQuestions()}

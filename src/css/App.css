@@ -57,10 +57,12 @@ a:hover {
 
 .start-btn {
   border: 0.16em solid #FFFFFF;
-  border-radius: 10px;
   color: #353c44;
   display: inline-block;
-  font-family: 'Roboto',sans-serif;
+}
+
+.btn {
+  border-radius: 10px;
   font-weight: 400;
   margin: 0 0.3em 0.3em 0;
   padding: 0.5em 3em;

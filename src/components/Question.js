@@ -39,8 +39,8 @@ function Question(props) {
           <p className="category-display">Category: <span className="category-name">{props.question.category}</span></p>
           <h5>{props.question.answer}</h5>
           <p className="did-you-know">Did you know this one?</p>
-          <button className="answer-btn left-btn" onClick={() => evaluateAnswer(true)}>Got it right!</button>
-          <button className="answer-btn" onClick={() => evaluateAnswer(false)}>Nope...</button>
+          <button className="answer-btn left-btn btn" onClick={() => evaluateAnswer(true)}>Got it right!</button>
+          <button className="answer-btn btn" onClick={() => evaluateAnswer(false)}>Nope...</button>
         </div>
       }
     </div>
