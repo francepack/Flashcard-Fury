@@ -60,7 +60,9 @@ function App() {
       </header>
       <div className="games-box">
       {games.length !== 0 &&
-        <Games />
+        <Games
+          games={games}
+        />
       }
       </div>
       {isLoading &&
