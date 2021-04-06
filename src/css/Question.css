@@ -40,4 +40,36 @@
   max-width: 70%;
   position: relative;
   left: 15%;
+  padding-bottom: 40px;
+}
+
+.answer-btn {
+  background-color: #c8d8e8;
+  display: inline-block;
+  padding: 0.5em 3em;
+  margin: 0 0.3em 0.3em 0;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  color: #353c44;
+  width: 150px;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.answer-btn:hover{
+  background-color: #b0bfce;
+  border-color: #DDDDDD;
+}
+
+.answer-btn:active{
+  color: #BBBBBB;
+  border-color: #BBBBBB;
+}
+
+.left-btn {
+  margin-right: 50px;
+}
+
+.did-you-know {
+  margin-bottom: 13px;
 }

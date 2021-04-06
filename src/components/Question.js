@@ -29,7 +29,7 @@ function Question(props) {
         <div className="question-box" onClick={turnOnAnswer}>
           <p className="question-count">Question {props.questionIncrementor} of 30</p>
           <p className="category-display">Category: <span className="category-name">{props.question.category}</span></p>
-          <h5><span className="emph">{props.question.question}</span></h5>
+          <h5>{props.question.question}</h5>
           <p className="click-anywhere">(Click anywhere to proceed)</p>
         </div>
       }
@@ -37,10 +37,10 @@ function Question(props) {
         <div className="answer-box">
           <p className="question-count">Question {props.questionIncrementor} of 30</p>
           <p className="category-display">Category: <span className="category-name">{props.question.category}</span></p>
-          <h5><span className="emph">{props.question.answer}</span></h5>
-          <p>Did you know this one?</p>
-          <button onClick={() => evaluateAnswer(true)}>Got it right!</button>
-          <button onClick={() => evaluateAnswer(false)}>Nope...</button>
+          <h5>{props.question.answer}</h5>
+          <p className="did-you-know">Did you know this one?</p>
+          <button className="answer-btn left-btn" onClick={() => evaluateAnswer(true)}>Got it right!</button>
+          <button className="answer-btn" onClick={() => evaluateAnswer(false)}>Nope...</button>
         </div>
       }
     </div>
