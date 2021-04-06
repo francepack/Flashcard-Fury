@@ -10,8 +10,8 @@
 }
 
 .start-text-area {
+  position: relative;
   height: 100%;
-  margin-top: 74px;
   width: 100%;
 }
 
@@ -20,6 +20,8 @@
 }
 
 .ready {
+  margin-top:0;
+  padding-top: 74px;
   font-size: calc(24px + 2vmin);
   font-style: italic;
 }

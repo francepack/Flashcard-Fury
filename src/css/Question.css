@@ -18,13 +18,26 @@
 }
 
 .question-count {
-  margin-top: 56px;
+  margin-top: 0;
+  padding-top: 56px;
 }
 
 .category-display {
-  margin-bottom: 50px;
+  font-size: calc(10px + 2vmin);
+  margin: 0 0 40px 0;
+}
+
+.category-name {
+  font-size: calc(8px + 2vmin);
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .question h5 {
-  
+  font-size: calc(10px + 2vmin);
+  line-height: 30px;
+  max-width: 70%;
+  position: relative;
+  left: 15%;
 }
