@@ -1,3 +1,9 @@
+# Flashcard Fury
+
+A Flashcard/Trivia app made using the jService api. Created to fulfill a React code challenge.
+
+I used a Jeopardy-style API to gather 6 random categories, then made separate api calls to gather questions for those categories. This app allows users to track multiple rounds of trivia, and review games they have played.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
