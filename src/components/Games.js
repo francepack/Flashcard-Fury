@@ -28,12 +28,13 @@ function Games(props) {
 
   return (
     <div className="games">
-      All games
-      <div>
+      <h4>All games</h4>
+      <div className="games-list">
         {props.games.map(game => (
           <div className="game-log">
-            <h4>{game.name}</h4>
+            <p>{game.name}</p>
             <p>{findCorrectAnswers(game)}/{game.questions.length}</p>
+            <button onClick={() => props.selectGame(game.id)}>Replay</button>
           </div>
         ))}
       </div>

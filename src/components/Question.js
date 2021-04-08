@@ -13,7 +13,7 @@ function Question(props) {
     if (userInput) {
       props.markAnsweredCorrectly(questionIndex);
     }
-    if (props.questionIncrementor === 30) {
+    if (props.questionIncrementor === props.questionCount) {
       props.resetIncrementor();
       props.endGame();
     } else {

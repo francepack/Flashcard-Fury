@@ -27,6 +27,7 @@ function Game(props) {
         <Question
           question={props.questionData[questionIncrementor - 1]}
           incrementQuestion={incrementQuestion}
+          questionCount={props.questionData.length}
           questionIncrementor={questionIncrementor}
           endGame={props.endGame}
           markAnsweredCorrectly={props.markAnsweredCorrectly}

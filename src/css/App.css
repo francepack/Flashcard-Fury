@@ -73,6 +73,7 @@ a:hover {
 .start-btn:hover{
   border-color: #DDDDDD;
   color: #000000;
+  cursor: pointer;
 }
 
 .start-btn:active{
@@ -99,7 +100,7 @@ a:hover {
 }
 
 .games-box {
-  background-color: white;
+  background-color: #383b44;
   border-radius: 10px;
   height: 60%;
   left: 80%;

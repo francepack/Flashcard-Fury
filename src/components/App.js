@@ -38,6 +38,10 @@ function App() {
     return currentGameData.questions;
   }
 
+  const selectGame = (gameId) => {
+    setCurrentGameId(gameId);
+  }
+
   const markAnsweredCorrectly = (questionIndex) => {
     // First, replace the question within the current game
     const currentGameData = findCurrentGameData();
@@ -63,18 +67,21 @@ function App() {
         <div className="games-box">
           <Games
             games={games}
+            selectGame={selectGame}
           />
         </div>
       }
       {isLoading &&
-        <div className="loading-message"><p>Gathering game data...</p></div>
+        <div className="loading-message">
+          <p>Gathering game data...</p>
+        </div>
       }
       {currentGameId &&
         <div className="game-box">
           <Game
             endGame={endGame}
-            questionData={findCurrentGameQuestions()}
             markAnsweredCorrectly={markAnsweredCorrectly}
+            questionData={findCurrentGameQuestions()}
           />
         </div>
       }

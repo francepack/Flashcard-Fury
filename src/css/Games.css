@@ -1,0 +1,15 @@
+.games {
+  color: white;
+}
+
+.games-list {
+
+}
+
+.game-log {
+  display: flex;
+}
+
+.game-log p {
+  margin: 5px 0 5px 36px;
+}
