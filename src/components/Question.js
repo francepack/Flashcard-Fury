@@ -10,9 +10,11 @@ function Question(props) {
 
   const evaluateAnswer = (userInput) => {
     const questionIndex = props.questionIncrementor - 1;
+    // user input 'true' if correct, 'false' if incorrect
     if (userInput) {
       props.markAnsweredCorrectly(questionIndex);
     }
+    // end game if on last question
     if (props.questionIncrementor === props.questionCount) {
       props.resetIncrementor();
       props.endGame();

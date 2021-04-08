@@ -1,7 +1,6 @@
 import "../css/Games.css";
 
 function Games(props) {
-
   const findCorrectAnswers = (game) => {
     let correctCount = 0;
     game.questions.forEach(question => {

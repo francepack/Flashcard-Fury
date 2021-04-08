@@ -13,12 +13,12 @@ function App() {
   const startGame = async () => {
     setIsLoading(true);
     const gameName = "Game " + (games.length + 1);
-    const clues = await fetchGameData();
+    const clues = await fetchGameData(); // From utils/api
     const gameData = {
       id: "G" + (games.length + 1),
       key: {gameName},
       name: gameName,
-      questions: formatClues(clues)
+      questions: formatClues(clues) // From utils/formatClues
     };
     setGames(games.concat(gameData));
     setIsLoading(false);

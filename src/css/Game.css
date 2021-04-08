@@ -1,7 +1,7 @@
 .game {
   align-items: center;
   background: url(https://cdn.hipwallpaper.com/i/58/37/SQq0dP.jpg) no-repeat fixed center;
-  background-color: white;
+  background-color: #FFFFFF;
   background-size: 70% 400px;
   flex-direction: column;
   height: 400px;
@@ -20,19 +20,19 @@
   cursor: pointer;
 }
 
-.ready {
+.ready-text {
   font-size: calc(24px + 2vmin);
   font-style: italic;
-  margin-top:0;
+  margin-top: 0;
   padding-top: 74px;
 }
 
-.quiz-begin {
+.quiz-begin-text {
   font-size: calc(16px + 2vmin);
   margin-top: 66px;
 }
 
-.click-anywhere {
+.click-anywhere-text {
   font-size: calc(10px + 2vmin);
   margin-top: 38px;
 }

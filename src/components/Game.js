@@ -17,9 +17,9 @@ function Game(props) {
     <div className="game">
       {!questionIncrementor &&
         <div className="start-text-area" onClick={() => incrementQuestion()}>
-          <p className="ready">Are you ready?</p>
-          <p className="quiz-begin">Your Quiz is about to begin!</p>
-          <p className="click-anywhere">(Click anywhere to proceed)</p>
+          <p className="ready-text">Are you ready?</p>
+          <p className="quiz-begin-text">Your Quiz is about to begin!</p>
+          <p className="click-anywhere-text">(Click anywhere to proceed)</p>
         </div>
       }
       {questionIncrementor >= 1 &&
