@@ -20,7 +20,6 @@ function Question(props) {
       props.incrementQuestion();
       setShowAnswer(false);
     }
-
   }
 
   return (

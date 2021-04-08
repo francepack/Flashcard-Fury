@@ -70,13 +70,13 @@ a:hover {
   transition: all 0.15s;
 }
 
-.start-btn:hover{
+.btn:hover {
   border-color: #DDDDDD;
   color: #000000;
   cursor: pointer;
 }
 
-.start-btn:active{
+.btn:active {
   border-color: #BBBBBB;
   color: #BBBBBB;
 }
@@ -101,10 +101,12 @@ a:hover {
 
 .games-box {
   background-color: #383b44;
+  border: 3px solid #5a5050;
   border-radius: 10px;
   height: 60%;
   left: 80%;
+  min-width: 200px;
   position: fixed;
   top: 20%;
-  width: 200px;
+  width: 18%;
 }

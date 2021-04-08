@@ -1,6 +1,7 @@
 .full {
   height: 100%;
   width: 100%;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .question:hover {

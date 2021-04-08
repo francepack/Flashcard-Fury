@@ -2,14 +2,21 @@
   color: white;
 }
 
-.games-list {
-
-}
-
 .game-log {
+  align-items: center;
   display: flex;
+  margin-bottom: 10px;
 }
 
 .game-log p {
-  margin: 5px 0 5px 36px;
+  margin: 0 0 0 20px;
+  width: 24%;
+}
+
+.replay-btn {
+  cursor: pointer;
+  height: 30px;
+  margin: 0 0 0 14px;
+  min-width: 60px;
+  padding: 0;
 }

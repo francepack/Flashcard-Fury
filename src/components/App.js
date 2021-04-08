@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 import "../css/App.css";
 import Game from "./Game";
 import Games from "./Games";
