@@ -4,7 +4,10 @@ A Flashcard/Trivia app made using the jService api. Created to fulfill a React c
 
 I used a Jeopardy-style API to gather 6 random categories, then made separate api calls to gather questions for those categories. This app allows users to track multiple rounds of trivia, and review games they have played.
 
-# Getting Started with Create React App
+<img width="1329" alt="Screen Shot 2021-04-08 at 9 41 44 AM" src="https://user-images.githubusercontent.com/44355328/114056868-558bdd80-984f-11eb-852a-4f66e7d4c65c.png">
+<img width="1020" alt="Screen Shot 2021-04-08 at 9 40 03 AM" src="https://user-images.githubusercontent.com/44355328/114056947-689ead80-984f-11eb-89fb-fb9b95e8483e.png">
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
